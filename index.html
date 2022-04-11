@@ -450,7 +450,7 @@
 			if (carrinho.length <= 1) {
 				$('#modalCompra').modal('toggle');
 				mensagem = mensagem.replace('#produto#',$('#produto' + $('#ultimoProdutoSelecionadoId').val()).text());
-				alert(mensagem); //trocar pelo whatsapp
+				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20selecionados%20:D');
 				carrinho = [];
 			}
 			else {
@@ -462,7 +462,7 @@
 				produtos = produtos.slice(0, -1);
 				mensagem = mensagem.replace('o produto', 'os produtos');
 				mensagem = mensagem.replace('#produto#', produtos);
-				alert(mensagem); //trocar pelo whatsapp
+				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20selecionados%20:D');
 				carrinho = [];
 			}
 		}
