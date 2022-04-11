@@ -382,8 +382,8 @@
 		</section>
 	</div>
 		<!-- Começo Modal -->
-		<div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="AdicionarCarrinho"
-		aria-hidden="true">
+		<div class="modal fade" id="modalCompra" tabindex="2" role="dialog" aria-labelledby="AdicionarCarrinho"
+		aria-hidden="true" hidden>
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -397,10 +397,10 @@
 					escolhendo.
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-success" onclick="EnviarMensagemWhatsapp()">Pedir
-						informações</button>
-					<button type="button" class="btn btn-primary" onclick="ContinuarComprando()">Continuar
-						selecionando</button>
+					<a class="btn btn-success" href="javascript:EnviarMensagemWhatsapp()">Pedir
+						informações</a>
+					<a class="btn btn-primary" href="javascript:ContinuarComprando()">Continuar
+						selecionando</a>
 				</div>
 			</div>
 		</div>
@@ -441,6 +441,7 @@
 		}
 
 		function EnviarMensagemWhatsapp() {
+			debugger;
 			var ultimoProdutoSelecionadoId = $('#ultimoProdutoSelecionadoId').val();
 			carrinho.push(ultimoProdutoSelecionadoId);
 			var mensagem = "Olá, gostaria de saber mais informações sobre o produto #produto# ! :)";
@@ -450,7 +451,7 @@
 			if (carrinho.length <= 1) {
 				$('#modalCompra').modal('toggle');
 				mensagem = mensagem.replace('#produto#',$('#produto' + $('#ultimoProdutoSelecionadoId').val()).text());
-				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20selecionados%20:D');
+				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=' + mensagem);
 				carrinho = [];
 			}
 			else {
@@ -462,7 +463,7 @@
 				produtos = produtos.slice(0, -1);
 				mensagem = mensagem.replace('o produto', 'os produtos');
 				mensagem = mensagem.replace('#produto#', produtos);
-				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20selecionados%20:D');
+				window.open(href='https://api.whatsapp.com/send?phone=5513997074846&text=' + mensagem);
 				carrinho = [];
 			}
 		}
