@@ -38,8 +38,8 @@
 	<div id="wrapper" class="container">
 		<section class="navbar main-menu">
 			<div class="navbar-inner main-menu">
-				<a href="index.html" class="logo pull-left"><img src="themes/images/logo.jpg" class="site_logo"
-						alt=""></a>
+				<a href="index.html" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo"
+					alt=""></a>
 				<nav id="menu" class="pull-right">
 					<ul>
 						<li><a href="index.html">Home</a></li>
@@ -110,7 +110,7 @@
 											<br>
 											<a class="btn btn-inverse" id="buttonEnviarSobMedida"
 												href="javascript:EnviarMensagem($('#selectSobMedida'),'produtos sob medida, tamanho: ')"
-												style="color: inherit;">Enviar</a>
+												>Enviar</a>
 										</div>
 										<div class="span6">
 											<h4> Ou mande suas medidas</h4>
@@ -163,25 +163,25 @@
 												modelo e tecido escolhido. Modelagem e preços a combinar via Whatsapp.
 											</p>
 
-
-											<label class="radio" for="register">
-												<input type="radio" name="account" value="register" id="register"
-													checked="checked">6 Peças</label>
-											<label class="radio" for="guest">
-												<input type="radio" name="account" value="guest" id="guest">15
-												Peças</label>
-											<label class="radio" for="guest">
-												<input type="radio" name="account" value="guest" id="guest">40
-												Peças</label>
-											<label class="radio" for="guest">
-												<input type="radio" name="account" value="guest" id="guest">100
-												Peças</label>
-											<label class="radio" for="guest">
-												<input type="radio" name="account" value="guest" id="guest">Mais
-												de 100 Peças</label>
+											<select id="selectAtacado" class="form form-group">
+												<option value="3 Peças">3 Peças</option>
+												<option value="6 Peças">6
+													Peças</option>
+												<option value="15 Peças">15
+													Peças</option>
+												<option value="40 Peças">40
+													Peças</option>
+												<option value="100 Peças">100
+													Peças</option>
+												<option value="mais de 100 Peças">mais
+													de 100 Peças</option>
+											</select>
 											<br>
-											<a class="btn btn-inverse" onclick="EnviarMensagem()"
-												style="color: inherit;">Enviar</a>
+											<a class="btn btn-inverse" id="buttonSelectAtacado"
+												href="javascript:EnviarMensagem($('#selectAtacado'),'peças em atacado, preciso de ')"
+												>Enviar</a>
+										</div>
+										
 										</div>
 									</div>
 								</div>
@@ -228,6 +228,7 @@
 				window.open('https://api.whatsapp.com/send?phone=5513997074846&text=' + mensagemFinal, '_blank');
 			}
 		}
+		
 	</script>
 
 </body>

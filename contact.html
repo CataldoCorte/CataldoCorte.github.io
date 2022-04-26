@@ -71,7 +71,7 @@
 					</div>
 					<div class="span7">
 						<p>Caso tenha alguma duvida, tenha uma sugestão ou queira deixar um depoimento, sinta-se a vontade para faze-lo aqui. Estaremos ansiosos para responder qualquer uma de suas duvidas ou mensagens</p>
-						<form method="post" action="#">
+						<!-- <form method="post" action="#">
 							<fieldset>
 								<div class="clearfix">
 									<label for="name"><span>Nome:</span></label>
@@ -90,13 +90,34 @@
 								<div class="clearfix">
 									<label for="message"><span>Messagem:</span></label>
 									<div class="input">
-										<textarea tabindex="3" class="input-xlarge" id="message" name="body" rows="7" placeholder="Messagem"></textarea>
+										<textarea tabindex="3" class="input-xlarge" id="quadril" name="body" rows="7" placeholder="Messagem"></textarea>
 									</div>
 								</div>
 								
 								<div class="actions">
 									<button tabindex="3" type="submit" class="btn btn-inverse">Enviar</button>
+								</div> -->
+								<div class="control-group">
+									<label class="control-label">Nome:</label>
+									<div class="controls">
+										<input type="text" placeholder="Nome" id="nome"
+											class="input-xlarge">
+									</div>
 								</div>
+								<div class="control-group">
+									<label class="control-label">E-mail:</label>
+									<div class="controls">
+										<input type="text" placeholder="E-mail" id="email"
+											class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Messagem:</label>
+									<div class="controls">
+										<textarea tabindex="3" class="input-xlarge" id="messagem" name="body" rows="7" placeholder="Messagem"></textarea>
+									</div>
+								</div>
+								<a  class="btn btn-inverse" href="javascript:EnviarContato()">Enviar</a>
 							</fieldset>
 						</form>
 					</div>				
@@ -115,6 +136,26 @@
 				<span>Copyright 20220 Cataldo Corte & Costura.</span>
 			</section>
 		</div>
-		<script src="themes/js/common.js"></script>		
+		<script src="themes/js/common.js"></script>
+		<script>
+			function EnviarMensagem(controle, mensagem) {
+				var mensagemFinal = 'Olá, gostaria de saber mais informações sobre ' + mensagem + $(controle).val();
+				window.open('https://api.whatsapp.com/send?phone=5513997074846&text=' + mensagemFinal, '_blank');
+			}
+	
+			function EnviarContato() {
+				var email = $('#email').val();
+				var messagem = $('#messagem').val();
+				var nome = $('#nome').val();
+	
+				if (email == '' || messagem == '' || nome == '' )
+					alert('Preencha todos os campos');
+				else {
+					var mensagemFinal = "Olá, estou entrando em contato pela seção fale conosto. Meu nome é " + nome + ", meu e-mail é " + email + " e " + messagem;
+					window.open('https://api.whatsapp.com/send?phone=5513997074846&text=' + mensagemFinal, '_blank');
+				}
+			}
+			
+		</script>	
     </body>
 </html>

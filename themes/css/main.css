@@ -702,7 +702,7 @@ section.our_client .row{
 }
 ._toggleMenu a:hover{
 	color:#fff;
-	background-color:#df403d !important;
+	background-color:#5772a8 !important;
 }
 ._toggleMenu .nav {
 	margin:0;
@@ -778,3 +778,6 @@ section.our_client .row{
 		border-bottom:1px solid #eee;
 	}
 }
+
+/*----------------- Serviços------------------------------------------------------------------------- */
+
