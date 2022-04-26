@@ -209,7 +209,7 @@ section#footer-bar a{
 }
 section#footer-bar  a:hover{
 	color:#999;
-	text-decoration:underline;	
+	text-decoration: none;	
 }
 section#footer-bar  .nav a{
 	background: url(../images/trigger_right.png) no-repeat 5px 7px;
